@@ -1,0 +1,163 @@
+/* HOME-BODY */
+
+.home-hero {
+    display: block;
+    position: relative;
+    top: 76px;
+    padding-bottom: 36.75%; /* 419/1140 = 36.75% - maintains aspect ratio fluidly */
+    background-image: url(/Users/alint/Desktop/AlexCoding/DevinWebsite/images/homebackground.png);
+    background-position: center;
+    background-size: cover; /* Change from cover to contain */
+    background-repeat: no-repeat;
+    margin: auto; /* Center the hero if screen is wider than max-width */
+  }
+  
+  .hero-text-container {
+    position: absolute;
+    right: 8%;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    max-width: 14.9375rem;
+  }
+  
+  .tablet-hero-text-container {
+    display: none;
+  }
+  
+  .home-hero p {
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem; /**/
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+  }
+  
+  /* New layout for home-body */
+  .home-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 5%;
+    margin-top: 76px;
+    gap: 150px;
+  }
+  
+  /* Left section with button and title */
+  .home-button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center;
+    width: fit-content;
+  }
+  
+  .home-button-title{
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 2rem; /* Space between title and button */
+    font-size: 40px;
+  }
+  
+  
+  .home-tablet-btn {
+    display: none !important;
+  }
+  
+  
+  /* Right section with collage */
+  .home-collage-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 287px;
+  }
+  
+  .home-collage-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 1024px) {
+
+    .home-body {
+      gap: 75px;
+    }
+  
+    .home-button-title{
+      font-size: 30px;
+    }
+}  
+
+@media (max-width: 800px) {
+
+      .hero-text-container{
+        display: none;
+      }
+    
+      .home-body {
+        flex-direction: column;
+        padding: 0;
+        gap: 0px;
+      }
+    
+      .tablet-hero-text-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        width: 100%;
+        background-color: var(--green-tertiary);
+      }
+    
+      .tablet-hero-text-container p {
+        text-align: center;
+        max-width: 400px;
+        width: 85vw;
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+      
+      .home-button-section {
+          width: 100%;
+          padding-top: 50px;
+      }
+    
+      .home-collage-section {
+        width: 80vw;
+        height: 350px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    
+      .home-button-title {
+        margin-bottom: 0;
+        width: 70vw;
+      }
+    
+      .home-desktop-btn.button {
+        display: none !important;
+      }
+      
+      .home-tablet-btn.button {
+        display: flex !important;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+  
+        .home-button-section {
+          padding-top: 30px;
+        }
+        
+        .home-collage-section{
+          padding: 25px 0px 25px;
+          height: fit-content
+        }
+    }

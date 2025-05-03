@@ -1,0 +1,430 @@
+/* BODY-ABOUT*/
+
+.about-background {
+    display: flex;
+    position: relative;
+    top: 76px;
+    margin-bottom: 76px;
+    background-color: var(--green-tertiary);
+    padding: 0px 40px; /**/
+    gap: 2rem;
+    align-items: center;
+    justify-content: center; /**/
+  }
+  
+  .about-background-img-left {
+    flex-shrink: 0.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 75px 0px;
+    width: 445px;
+  }
+  
+  .about-background-img-left img {
+    object-fit: contain;
+  }
+  
+  .about-background-text-right {
+    width: 650px;
+    padding: 1.5rem;
+  }
+  
+  .about-background-text-right h2{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .about-background-text-right p {
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--primary-color);
+  }
+  
+  /* SCROLL IMAGE */
+  .carousel-section {
+    padding: 100px 0 80px;
+  }
+  
+  .carousel-header-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 740px;
+    width: 90vw;
+    gap: 25px;
+    margin: 0 auto;
+  }
+  
+  .container {
+    max-width: 100%;
+    width: 95vw;
+    margin: 0 auto;
+    padding: 50px 20px;
+    position: relative;
+  }
+  
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    perspective: 1200px;
+    overflow: hidden;
+  }
+  
+  /* Fixed positioning for the carousel items */
+  .carousel-items {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Add smooth transition class for first interaction */
+  .smooth-transition {
+    transition: transform 1s ease;
+  }
+  
+  .carousel-item {
+    position: absolute;
+    width: 393.5px;  /* Main center image base size */
+    height: 353.68px;
+    box-shadow: 10px 8px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+    transition: all 0.5s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    padding: 0;
+  }
+  
+  /* White image will always have full opacity */
+  .carousel-item.white-image {
+    opacity: 1 !important;
+  }
+  
+  .carousel-item.white-image img {
+    opacity: 1 !important;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Positioning classes used by JavaScript */
+  .item-center {
+    z-index: 5;
+    transform: translateX(0);
+    opacity: 1;
+    /* Center item is at 100% size */
+  }
+  
+  .item-left-1 {
+    z-index: 4;
+    transform: translateX(-50%); /* Position remains at 50% to show half */
+    width: 334.5px; /* 85% of center size */
+    height: 300.6px; /* 85% of center height */
+    opacity: 0.8;
+  }
+  
+  .item-right-1 {
+    z-index: 4;
+    transform: translateX(50%); /* Position remains at 50% to show half */
+    width: 334.5px;
+    height: 300.6px;
+    opacity: 0.8;
+  }
+  
+  .item-left-2 {
+    z-index: 3;
+    transform: translateX(-100%); /* Position adjusted to show ~50% of smaller image */
+    width: 275.5px; /* 70% of center size */
+    height: 247.6px; /* 70% of center height */
+    opacity: 0.7;
+  }
+  
+  .item-right-2 {
+    z-index: 3;
+    transform: translateX(100%); /* Position adjusted to show ~50% of smaller image */
+    width: 275.5px;
+    height: 247.6px;
+    opacity: 0.7;
+  }
+  
+  /* Navigation dots */
+  .carousel-dots-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #8B572A;
+  }
+  
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background-color: #f0f0f0;
+  }
+
+  .about-socials-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1100px) {
+    .carousel-container {
+      height: 380px;
+    }
+    
+    .carousel-item {
+      width: 350px;
+      height: 315px;
+    }
+    
+    .item-left-1, .item-right-1 {
+      width: 297.5px; /* 85% of main size */
+      height: 267.75px; /* 85% of main height */
+    }
+    
+    .item-left-2, .item-right-2 {
+      width: 245px; /* 70% of main size */
+      height: 220.5px; /* 70% of main height */
+    }
+    
+    .item-left-1 {
+      transform: translateX(-50%);
+    }
+    
+    .item-right-1 {
+      transform: translateX(50%);
+    }
+    
+    .item-left-2 {
+      transform: translateX(-100%);
+    }
+    
+    .item-right-2 {
+      transform: translateX(100%);
+    }
+  }
+
+  @media (max-width: 900px) {
+
+    .about-background-text-right p {
+      font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-background-img-left {
+      flex-shrink: 0.5;
+    }
+  
+    .about-background-text-right p {
+      font-size: 16px;
+    }
+}
+  
+  /* Changed the breakpoint from 480px to 800px as requested */
+  @media (max-width: 800px) {
+
+/* ABOUT */
+
+  .about-background {
+    flex-direction: column;
+    padding: 0rem; /**/
+    gap: 0;
+  }
+
+  .about-background-img-left {
+    padding: 50px 0px;
+  }
+
+  .about-background-text-right {
+    max-width: 550px;
+    padding: 0rem 45px 75px;
+  }
+   
+  .about-background-text-right p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .about-socials-buttons{
+    gap: 10px;
+  }
+
+  .carousel-section{
+    padding: 75px 0 75px
+  }
+
+  .container {
+    padding: 25px 20px 0;
+  }
+
+    .container {
+      width: 98vw; /* Take up almost full width */
+      padding: 20px 5px;
+    }
+    
+    .carousel-container {
+      height: 350px; /* Increased from 300px */
+    }
+    
+    .carousel-item {
+      width: 330px; /* Increased from 280px */
+      height: 297px; /* Increased from 252px */
+    }
+    
+    /* At this breakpoint, only show the center image */
+    .item-left-1,
+    .item-right-1,
+    .item-left-2,
+    .item-right-2 {
+      visibility: hidden;
+      opacity: 0;
+    }
+    
+    .item-center {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .about-socials-buttons {
+        flex-direction: column;
+    }
+  
+  }
+  
+  /* Additional mobile styling for even smaller screens */
+  @media (max-width: 480px) {
+    .carousel-section {
+      padding: 60px 0 40px;
+    }
+    
+    .carousel-container {
+      height: 250px;
+    }
+    
+    .carousel-item {
+      width: 220px;
+      height: 198px;
+    }
+    
+    .carousel-header-section {
+      gap: 15px;
+    }
+    
+    .carousel-header-section h2 {
+      font-size: 24px;
+    }
+    
+    .carousel-header-section p {
+      font-size: 16px;
+    }
+    
+    .about-socials-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+
+    /* ABOUT */
+    
+    .about-background {
+      flex-direction: column;
+      height: auto;
+      padding: 1.5rem;
+    }
+    
+    .about-background-img-left {
+      width: 100%;
+      max-width: 90vw;
+      margin-bottom: 25px;
+      padding: 0;
+    }
+    
+    .about-background-text-right{
+      width: 100%; /* Full width */
+        padding: 0 1rem; /* Add horizontal padding */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center children horizontally */
+    }
+    
+    .about-background-text-right p {
+      font-size: 14px;
+      text-align: center;
+      width: 100%; /* Use full width instead of fixed 200px */
+      max-width: 350px; /* Maximum width but not fixed */
+    }
+    
+    
+    .carousel-section{
+      padding: 65px 0 50px
+    }
+    
+    .carousel-header-section{
+      gap: 10px;
+    }
+    
+    .container {
+      padding: 10px 20px 0;
+    }
+    
+    .carousel-dots-nav {
+      margin-top: 5px;
+    }
+}
+  
