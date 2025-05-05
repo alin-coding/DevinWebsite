@@ -5,7 +5,7 @@
     position: relative;
     top: 76px;
     padding-bottom: 36.75%; /* 419/1140 = 36.75% - maintains aspect ratio fluidly */
-    background-image: url(./images/homebackground.png);
+    background-image: url(../images/homebackground.png);
     background-position: center;
     background-size: cover; /* Change from cover to contain */
     background-repeat: no-repeat;
