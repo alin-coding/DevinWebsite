@@ -1,3 +1,45 @@
+// Handle Submit
+
+const messageEl = document.querySelector('.form-message')
+const subscribeForm = document.querySelector('.newsletter-form')
+const nameInput = document.querySelector('.newsletter-name-input')
+const emailInput = document.querySelector('.newsletter-email-input');
+
+const onSubmit = (e) => {
+  e.preventDefault()
+
+  const formData = new FormData();
+  formData.append('entry.1700025167', nameInput.value)
+  formData.append('entry.1540557302', emailInput.value)
+
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdYW6cnBY74YWVb98-3xPV4gOau06XGf0r7fhGj5vDUASDTZA/formResponse'
+, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  })
+
+  .then(()=> {
+    messageEl.textContent = "Thanks for subscribing!";
+    messageEl.classList.remove('error')
+    messageEl.style.display = 'block'
+    subscribeForm.reset();
+  })
+  .catch((error)=> {
+    console.error('Error submitting form:', error);
+  })
+
+  setTimeout(()=> {
+    messageEl.style.display = 'none';
+
+  }, 5000);
+
+}
+
+
+subscribeForm.addEventListener('submit', onSubmit)
+
+
 // Toggle mobile menu
 const menuBtn = document.querySelector('.mobile-menu-btn');
 const header = document.querySelector('.header-main');

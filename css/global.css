@@ -170,6 +170,11 @@ h1 {
     margin-bottom: 10px;
   }
 
+  .form-message {
+    margin-bottom: 5px;
+    color: var(--brown-tertiary);
+  }
+
 
   input {
     width: 100%;
@@ -180,6 +185,11 @@ h1 {
 
   form {
     padding: 5px 0px 5px;
+  }
+
+  .subscribe-btn{
+    display: flex;
+    justify-self: center;
   }
   
   
@@ -440,6 +450,7 @@ h3, p, .ghost-text, input::placeholder {
     flex-direction: column;
     align-items: center;
   }
+
 
   /* FOOTER */
   
